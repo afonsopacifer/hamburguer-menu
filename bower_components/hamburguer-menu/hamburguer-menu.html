@@ -1,0 +1,177 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!-- Menu children
+========================================== -->
+<dom-module id="menu-item">
+  <template>
+
+    <style>
+      .burguer-menu-item {
+        /* behavior */
+        list-style: none;
+      }
+
+      @media screen and (min-width: 500px) {
+        /* behavior */
+        .burguer-menu-item {
+          display: inline-block;
+        }
+      }
+
+      .burguer-menu-link {
+        /* behavior */
+        box-sizing: border-box;
+        display: inline-block;
+        /* design */
+        padding: 20px;
+        text-decoration: none;
+        transition: .3s ease all;
+        color: #000;
+      }
+
+      .burguer-menu-link:hover {
+        /* design */
+        text-decoration: underline;
+      }
+
+      @media screen and (max-width: 500px) {
+        .burguer-menu-link {
+          /* behavior */
+          width: 100%;
+          /* design */
+          border-bottom: 1px solid #2c2b2b;
+          color: #fff;
+        }
+
+        .burguer-menu-link:hover {
+          /* design */
+          background: #2c2b2b;
+          text-decoration: none;
+        }
+      }
+    </style>
+
+    <li class="burguer-menu-item">
+      <a href="{{href}}" class="burguer-menu-link" target="{{target}}">{{text}}</a>
+    </li>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'menu-item',
+
+      properties: {
+        href: {
+          type: String,
+          value: "#"
+        },
+        text: {
+          type: String,
+          value: "link"
+        },
+        target: {
+          type: String,
+          value: "_self"
+        }
+      }
+    });
+  </script>
+</dom-module>
+
+<!-- Menu container
+========================================== -->
+<dom-module id="hamburguer-menu">
+  <template>
+
+    <style>
+      .burguer-btn-menu {
+        /* design */
+        border: 0;
+        background: none;
+        padding: 10px;
+      }
+
+      @media screen and (min-width: 500px) {
+        .burguer-btn-menu {
+          /* behavior */
+          display: none;
+          /* design */
+          transition: .3s ease all;
+        }
+      }
+
+      .burguer-menu {
+        /* behavior */
+        display: inline-flex;
+        align-items: flex-start;
+      }
+
+    @media screen and (max-width: 500px) {
+      .burguer-menu-itens {
+        /* design */
+        background: #3f3f3f;
+      }
+    }
+      @media screen and (max-width: 500px) {
+        .burguer-menu {
+          /* behavior */
+          position: fixed;
+          height: 100vh;
+          top: 0;
+          left: 0;
+          z-index: 2;
+          transform: translateX(-220px);
+          /* design */
+          transition: .3s ease all;
+        }
+      }
+
+      .burguer-menu-itens {
+        /* behavior */
+        padding-left: 0;
+        margin: 0;
+      }
+
+      @media screen and (max-width: 500px) {
+        .burguer-menu-itens {
+          /* behavior */
+          width: 220px;
+          height: 100vh;
+        }
+      }
+
+      .burguer-show-menu {
+        /* behavior */
+        transform: translateX(0);
+      }
+    </style>
+
+    <nav class="burguer-menu" id="menu">
+
+      <ul class="burguer-menu-itens">
+        <content></content>
+      </ul>
+
+      <button class="burguer-btn-menu" id="menuBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="#3f3f3f"><path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/></svg>
+      </button>
+
+    </nav>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'hamburguer-menu',
+
+      listeners: {
+        'menuBtn.tap': 'toggleCanvas'
+      },
+
+      toggleCanvas: function() {
+        var menu = this.$.menu.classList;
+        menu.contains('burguer-show-menu') ? menu.remove('burguer-show-menu') : menu.add('burguer-show-menu');
+      },
+    });
+  </script>
+</dom-module>
