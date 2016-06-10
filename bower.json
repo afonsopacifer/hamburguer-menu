@@ -1,0 +1,30 @@
+{
+  "name": "off-canvas-menu",
+  "description": "A Polymer element for Off-canvas Menu.",
+  "main": "off-canvas-menu.html",
+  "version": "0.1.0",
+  "authors": [
+    "Afonso Pacifer <afonsopacifer@live.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+      "polymer",
+      "github",
+      "github-corner",
+      "web-components"
+  ],
+  "ignore": [
+      "**/.*",
+      "node_modules",
+      "bower_components"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.5.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.1.6",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.2.3",
+    "web-component-tester": "^4.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.22"
+  }
+}

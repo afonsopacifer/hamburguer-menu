@@ -1,0 +1,170 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!-- Menu children
+========================================== -->
+<dom-module id="menu-item">
+  <template>
+
+    <style>
+      .menuItem {
+        /* behavior */
+        list-style: none;
+      }
+
+      @media screen and (min-width: 500px) {
+        /* behavior */
+        .menuItem {
+          display: inline-block;
+        }
+      }
+
+      .menuLink {
+        /* behavior */
+        box-sizing: border-box;
+        display: inline-block;
+        /* design */
+        padding: 20px;
+        text-decoration: none;
+        transition: .3s ease all;
+        color: #000;
+      }
+
+      .menuLink:hover {
+        /* design */
+        text-decoration: underline;
+      }
+
+      @media screen and (max-width: 500px) {
+        .menuLink {
+          /* behavior */
+          width: 100%;
+          /* design */
+          border-bottom: 1px solid #2c2b2b;
+          color: #fff;
+        }
+
+        .menuLink:hover {
+          /* design */
+          background: #2c2b2b;
+        }
+      }
+    </style>
+
+    <li class="menuItem">
+      <a href="{{href}}" class="menuLink" target="{{target}}">{{text}}</a>
+    </li>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'menu-item',
+
+      properties: {
+        href: {
+          type: String,
+          value: "#"
+        },
+        text: {
+          type: String,
+          value: "link"
+        },
+        target: {
+          type: String,
+          value: "_self"
+        }
+      }
+    });
+  </script>
+</dom-module>
+
+<!-- Menu container
+========================================== -->
+<dom-module id="off-canvas-menu">
+  <template>
+
+    <style>
+      .btnMenu {
+        /* design */
+        border: 0;
+        background: none;
+        padding: 10px;
+      }
+
+      @media screen and (min-width: 500px) {
+        .btnMenu {
+          /* behavior */
+          display: none;
+        }
+      }
+
+      .menu {
+        /* behavior */
+        display: inline-flex;
+        align-items: flex-start;
+      }
+
+      @media screen and (max-width: 500px) {
+        .menu {
+          /* behavior */
+          position: fixed;
+          height: 100vh;
+          top: 0;
+          left: 0;
+          z-index: 2;
+          transform: translateX(-220px);
+          /* design */
+          transition: .3s ease all;
+        }
+      }
+
+      .menuItens {
+        /* behavior */
+        padding-left: 0;
+        margin: 0;
+      }
+
+      @media screen and (max-width: 500px) {
+        .menuItens {
+          /* behavior */
+          width: 220px;
+          height: 100vh;
+          /* design */
+          background: #3f3f3f;
+        }
+      }
+
+      .showMenu {
+        /* behavior */
+        transform: translateX(0);
+      }
+    </style>
+
+    <nav class="menu" id="menu">
+
+      <ul class="menuItens">
+        <content></content>
+      </ul>
+
+      <button class="btnMenu" id="menuBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="#3f3f3f"><path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/></svg>
+      </button>
+
+    </nav>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'off-canvas-menu',
+
+      listeners: {
+        'menuBtn.tap': 'toggleCanvas'
+      },
+
+      toggleCanvas: function() {
+        var menu = this.$.menu.classList;
+        menu.contains('showMenu') ? menu.remove('showMenu') : menu.add('showMenu');
+      },
+    });
+  </script>
+</dom-module>
