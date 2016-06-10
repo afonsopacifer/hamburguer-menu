@@ -1,38 +1,98 @@
-# \<off-canvas-menu\>
+# &lt;off-canvas-menu&gt;
 
-A Polymer element for Off-canvas Menu.
+> <🍔/> A Polymer element for Off-canvas Menu.
 
-## Install the Polymer-CLI
 
-First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve your application locally.
+## Demo
 
-## Viewing Your Application
+[Check it live!](http://afonsopacifer.github.io/off-canvas-menu/)
 
-```
-$ polymer serve
-```
+## Install
 
-## Building Your Application
+Install the component using [Bower](http://bower.io/):
 
-```
-$ polymer build
+```sh
+$ bower install off-canvas-menu/off-canvas-menu --save
 ```
 
-This will create a `build/` folder with `bundled/` and `unbundled/` sub-folders
-containing a bundled (Vulcanized) and unbundled builds, both run through HTML,
-CSS, and JS optimizers.
+## Usage
 
-You can serve the built versions by giving `polymer serve` a folder to serve
-from:
+1. Import Web Components' polyfill:
 
-```
-$ polymer serve build/bundled
+```html
+<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 ```
 
-## Running Tests
+2. Import Custom Element:
 
-```
-$ polymer test
+```html
+<link rel="import" href="bower_components/off-canvas-menu/off-canvas-menu.html">
 ```
 
-Your application is already set up to be tested via [web-component-tester](https://github.com/Polymer/web-component-tester). Run `polymer test` to run your application's test suite locally.
+3. Start using it!
+
+```html
+<off-canvas-menu>
+  <menu-item text="link 1"></menu-item>
+  <menu-item text="link 2"></menu-item>
+  <menu-item text="link 3"></menu-item>
+</off-canvas-menu>
+```
+
+## Attributes
+
+Attribute  | Type        | Default             | Description
+---        | ---         | ---                 | ---
+`text`   | *String*    | `link`    | Sets the corner text content.
+`href` | *String*   | `#`             | Defines the destination url.
+`target`     | *String*    | `_self`   | Defines the hyperlink target.
+
+**Example:**
+
+```html
+<off-canvas-menu>
+  <menu-item text="link 1" href="#" target="_blank"></menu-item>
+  <menu-item text="link 2" href="#" target="_self"></menu-item>
+</off-canvas-menu>
+```
+
+## Development
+
+1. Install [Bower](http://bower.io/) & [Polymer-CLI](https://www.polymer-project.org/1.0/docs/tools/polymer-cli):
+
+```sh
+$ [sudo] npm install -g bower polymer-cli
+```
+
+2. Install local dependencies:
+
+```sh
+$ bower install
+```
+
+3. Start the development server on http://localhost:8080/:
+
+```sh
+$ polyserve
+```
+
+**View docs:**<br>
+http://localhost:8080/components/off-canvas-menu/
+
+**View demo:**<br>
+http://localhost:8080/components/off-canvas-menu/demo/
+
+## Versioning
+
+To keep better organization of releases we follow the [Semantic Versioning 2.0.0](http://semver.org/) guidelines.
+
+## Contributing
+Find on our [issues](https://github.com/afonsopacifer/off-canvas-menu/issues/) the next steps of the project ;)
+<br>
+Want to contribute? [Follow these recommendations](https://github.com/afonsopacifer/off-canvas-menu/blob/master/CONTRIBUTING.md).
+
+## History
+See [Releases](https://github.com/afonsopacifer/off-canvas-menu/releases) for detailed changelog.
+
+## License
+[MIT License](https://github.com/afonsopacifer/off-canvas-menu/blob/master/LICENSE.md) © [Afonso Pacifer](http://afonsopacifer.com/)
