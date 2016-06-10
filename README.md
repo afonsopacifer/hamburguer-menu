@@ -12,7 +12,7 @@
 Install the component using [Bower](http://bower.io/):
 
 ```sh
-$ bower install hamburguer-menu/hamburguer-menu --save
+$ bower install hamburguer-menu --save
 ```
 
 ## Usage
