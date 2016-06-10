@@ -2,28 +2,28 @@
 
 <html>
   <head>
-    <title>off-canvas-menu test</title>
+    <title>hamburguer-menu test</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
     <script src="../../web-component-tester/browser.js"></script>
 
-    <link rel="import" href="../off-canvas-menu.html">
+    <link rel="import" href="../hamburguer-menu.html">
   </head>
   <body>
 
     <test-fixture id="basic">
       <template>
-        <off-canvas-menu></off-canvas-menu>
+        <hamburguer-menu></hamburguer-menu>
       </template>
     </test-fixture>
 
     <script>
-      suite('off-canvas-menu', function() {
+      suite('hamburguer-menu', function() {
 
         test('instantiating the element works', function() {
           let element = fixture('basic');
-          assert.equal(element.is, 'off-canvas-menu');
+          assert.equal(element.is, 'hamburguer-menu');
         });
 
       });

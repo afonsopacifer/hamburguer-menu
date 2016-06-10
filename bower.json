@@ -1,7 +1,7 @@
 {
-  "name": "off-canvas-menu",
+  "name": "hamburguer-menu",
   "description": "A Polymer element for Off-canvas Menu.",
-  "main": "off-canvas-menu.html",
+  "main": "hamburguer-menu.html",
   "version": "0.1.0",
   "authors": [
     "Afonso Pacifer <afonsopacifer@live.com>"

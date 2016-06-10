@@ -1,18 +1,18 @@
-# &lt;off-canvas-menu&gt;
+# &lt;hamburguer-menu&gt;
 
 > <🍔/> A Polymer element for Off-canvas Menu.
 
 
 ## Demo
 
-[Check it live!](http://afonsopacifer.github.io/off-canvas-menu/)
+[Check it live!](http://afonsopacifer.github.io/hamburguer-menu/)
 
 ## Install
 
 Install the component using [Bower](http://bower.io/):
 
 ```sh
-$ bower install off-canvas-menu/off-canvas-menu --save
+$ bower install hamburguer-menu/hamburguer-menu --save
 ```
 
 ## Usage
@@ -26,17 +26,17 @@ $ bower install off-canvas-menu/off-canvas-menu --save
 2. Import Custom Element:
 
 ```html
-<link rel="import" href="bower_components/off-canvas-menu/off-canvas-menu.html">
+<link rel="import" href="bower_components/hamburguer-menu/hamburguer-menu.html">
 ```
 
 3. Start using it!
 
 ```html
-<off-canvas-menu>
+<hamburguer-menu>
   <menu-item text="link 1"></menu-item>
   <menu-item text="link 2"></menu-item>
   <menu-item text="link 3"></menu-item>
-</off-canvas-menu>
+</hamburguer-menu>
 ```
 
 ## Attributes
@@ -50,10 +50,10 @@ Attribute  | Type        | Default             | Description
 **Example:**
 
 ```html
-<off-canvas-menu>
+<hamburguer-menu>
   <menu-item text="link 1" href="#" target="_blank"></menu-item>
   <menu-item text="link 2" href="#" target="_self"></menu-item>
-</off-canvas-menu>
+</hamburguer-menu>
 ```
 
 ## Development
@@ -77,22 +77,22 @@ $ polyserve
 ```
 
 **View docs:**<br>
-http://localhost:8080/components/off-canvas-menu/
+http://localhost:8080/components/hamburguer-menu/
 
 **View demo:**<br>
-http://localhost:8080/components/off-canvas-menu/demo/
+http://localhost:8080/components/hamburguer-menu/demo/
 
 ## Versioning
 
 To keep better organization of releases we follow the [Semantic Versioning 2.0.0](http://semver.org/) guidelines.
 
 ## Contributing
-Find on our [issues](https://github.com/afonsopacifer/off-canvas-menu/issues/) the next steps of the project ;)
+Find on our [issues](https://github.com/afonsopacifer/hamburguer-menu/issues/) the next steps of the project ;)
 <br>
-Want to contribute? [Follow these recommendations](https://github.com/afonsopacifer/off-canvas-menu/blob/master/CONTRIBUTING.md).
+Want to contribute? [Follow these recommendations](https://github.com/afonsopacifer/hamburguer-menu/blob/master/CONTRIBUTING.md).
 
 ## History
-See [Releases](https://github.com/afonsopacifer/off-canvas-menu/releases) for detailed changelog.
+See [Releases](https://github.com/afonsopacifer/hamburguer-menu/releases) for detailed changelog.
 
 ## License
-[MIT License](https://github.com/afonsopacifer/off-canvas-menu/blob/master/LICENSE.md) © [Afonso Pacifer](http://afonsopacifer.com/)
+[MIT License](https://github.com/afonsopacifer/hamburguer-menu/blob/master/LICENSE.md) © [Afonso Pacifer](http://afonsopacifer.com/)

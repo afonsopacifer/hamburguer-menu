@@ -6,19 +6,19 @@
   <template>
 
     <style>
-      .off-menu-item {
+      .burguer-menu-item {
         /* behavior */
         list-style: none;
       }
 
       @media screen and (min-width: 500px) {
         /* behavior */
-        .off-menu-item {
+        .burguer-menu-item {
           display: inline-block;
         }
       }
 
-      .off-menu-link {
+      .burguer-menu-link {
         /* behavior */
         box-sizing: border-box;
         display: inline-block;
@@ -29,13 +29,13 @@
         color: #000;
       }
 
-      .off-menu-link:hover {
+      .burguer-menu-link:hover {
         /* design */
         text-decoration: underline;
       }
 
       @media screen and (max-width: 500px) {
-        .off-menu-link {
+        .burguer-menu-link {
           /* behavior */
           width: 100%;
           /* design */
@@ -43,7 +43,7 @@
           color: #fff;
         }
 
-        .off-menu-link:hover {
+        .burguer-menu-link:hover {
           /* design */
           background: #2c2b2b;
           text-decoration: none;
@@ -51,8 +51,8 @@
       }
     </style>
 
-    <li class="off-menu-item">
-      <a href="{{href}}" class="off-menu-link" target="{{target}}">{{text}}</a>
+    <li class="burguer-menu-item">
+      <a href="{{href}}" class="burguer-menu-link" target="{{target}}">{{text}}</a>
     </li>
 
   </template>
@@ -81,11 +81,11 @@
 
 <!-- Menu container
 ========================================== -->
-<dom-module id="off-canvas-menu">
+<dom-module id="hamburguer-menu">
   <template>
 
     <style>
-      .off-btn-menu {
+      .burguer-btn-menu {
         /* design */
         border: 0;
         background: none;
@@ -93,7 +93,7 @@
       }
 
       @media screen and (min-width: 500px) {
-        .off-btn-menu {
+        .burguer-btn-menu {
           /* behavior */
           display: none;
           /* design */
@@ -101,20 +101,20 @@
         }
       }
 
-      .off-menu {
+      .burguer-menu {
         /* behavior */
         display: inline-flex;
         align-items: flex-start;
       }
 
     @media screen and (max-width: 500px) {
-      .off-menu-itens {
+      .burguer-menu-itens {
         /* design */
         background: #3f3f3f;
       }
     }
       @media screen and (max-width: 500px) {
-        .off-menu {
+        .burguer-menu {
           /* behavior */
           position: fixed;
           height: 100vh;
@@ -127,33 +127,33 @@
         }
       }
 
-      .off-menu-itens {
+      .burguer-menu-itens {
         /* behavior */
         padding-left: 0;
         margin: 0;
       }
 
       @media screen and (max-width: 500px) {
-        .off-menu-itens {
+        .burguer-menu-itens {
           /* behavior */
           width: 220px;
           height: 100vh;
         }
       }
 
-      .off-show-menu {
+      .burguer-show-menu {
         /* behavior */
         transform: translateX(0);
       }
     </style>
 
-    <nav class="off-menu" id="menu">
+    <nav class="burguer-menu" id="menu">
 
-      <ul class="off-menu-itens">
+      <ul class="burguer-menu-itens">
         <content></content>
       </ul>
 
-      <button class="off-btn-menu" id="menuBtn">
+      <button class="burguer-btn-menu" id="menuBtn">
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="#3f3f3f"><path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/></svg>
       </button>
 
@@ -162,7 +162,7 @@
 
   <script>
     Polymer({
-      is: 'off-canvas-menu',
+      is: 'hamburguer-menu',
 
       listeners: {
         'menuBtn.tap': 'toggleCanvas'
@@ -170,7 +170,7 @@
 
       toggleCanvas: function() {
         var menu = this.$.menu.classList;
-        menu.contains('off-show-menu') ? menu.remove('off-show-menu') : menu.add('off-show-menu');
+        menu.contains('burguer-show-menu') ? menu.remove('burguer-show-menu') : menu.add('burguer-show-menu');
       },
     });
   </script>
