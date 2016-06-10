@@ -6,19 +6,19 @@
   <template>
 
     <style>
-      .menuItem {
+      .off-menu-item {
         /* behavior */
         list-style: none;
       }
 
       @media screen and (min-width: 500px) {
         /* behavior */
-        .menuItem {
+        .off-menu-item {
           display: inline-block;
         }
       }
 
-      .menuLink {
+      .off-menu-link {
         /* behavior */
         box-sizing: border-box;
         display: inline-block;
@@ -29,13 +29,13 @@
         color: #000;
       }
 
-      .menuLink:hover {
+      .off-menu-link:hover {
         /* design */
         text-decoration: underline;
       }
 
       @media screen and (max-width: 500px) {
-        .menuLink {
+        .off-menu-link {
           /* behavior */
           width: 100%;
           /* design */
@@ -43,15 +43,16 @@
           color: #fff;
         }
 
-        .menuLink:hover {
+        .off-menu-link:hover {
           /* design */
           background: #2c2b2b;
+          text-decoration: none;
         }
       }
     </style>
 
-    <li class="menuItem">
-      <a href="{{href}}" class="menuLink" target="{{target}}">{{text}}</a>
+    <li class="off-menu-item">
+      <a href="{{href}}" class="off-menu-link" target="{{target}}">{{text}}</a>
     </li>
 
   </template>
@@ -84,7 +85,7 @@
   <template>
 
     <style>
-      .btnMenu {
+      .off-btn-menu {
         /* design */
         border: 0;
         background: none;
@@ -92,20 +93,28 @@
       }
 
       @media screen and (min-width: 500px) {
-        .btnMenu {
+        .off-btn-menu {
           /* behavior */
           display: none;
+          /* design */
+          transition: .3s ease all;
         }
       }
 
-      .menu {
+      .off-menu {
         /* behavior */
         display: inline-flex;
         align-items: flex-start;
       }
 
+    @media screen and (max-width: 500px) {
+      .off-menu-itens {
+        /* design */
+        background: #3f3f3f;
+      }
+    }
       @media screen and (max-width: 500px) {
-        .menu {
+        .off-menu {
           /* behavior */
           position: fixed;
           height: 100vh;
@@ -118,35 +127,33 @@
         }
       }
 
-      .menuItens {
+      .off-menu-itens {
         /* behavior */
         padding-left: 0;
         margin: 0;
       }
 
       @media screen and (max-width: 500px) {
-        .menuItens {
+        .off-menu-itens {
           /* behavior */
           width: 220px;
           height: 100vh;
-          /* design */
-          background: #3f3f3f;
         }
       }
 
-      .showMenu {
+      .off-show-menu {
         /* behavior */
         transform: translateX(0);
       }
     </style>
 
-    <nav class="menu" id="menu">
+    <nav class="off-menu" id="menu">
 
-      <ul class="menuItens">
+      <ul class="off-menu-itens">
         <content></content>
       </ul>
 
-      <button class="btnMenu" id="menuBtn">
+      <button class="off-btn-menu" id="menuBtn">
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="#3f3f3f"><path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/></svg>
       </button>
 
@@ -163,7 +170,7 @@
 
       toggleCanvas: function() {
         var menu = this.$.menu.classList;
-        menu.contains('showMenu') ? menu.remove('showMenu') : menu.add('showMenu');
+        menu.contains('off-show-menu') ? menu.remove('off-show-menu') : menu.add('off-show-menu');
       },
     });
   </script>
