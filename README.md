@@ -2,8 +2,9 @@
 
 > <🍔/> A Polymer element for Off-canvas Menu.
 
+![demo](demo.gif)
 
-## Demo
+## Live Demo
 
 [Check it live!](http://afonsopacifer.github.io/hamburguer-menu/)
 
